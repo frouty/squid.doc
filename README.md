@@ -1,4 +1,10 @@
 # squid.doc
+# squid sur raspberry pi
+- 1 installation de raspbian avec https://github.com/balena-io/etcher#debian-and-ubuntu-based-package-repository-gnulinux-x86x64 
+- 2 on telecharge l'image raspbian puis on l'install sur la sd carte avec balena etcher
+- 
+# Connaitre sa version de squid
+
 Version de squid : **squid3 -v**
 
 Connaitre son adresse IP: http://www.ipaddresslocation.org/
