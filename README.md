@@ -22,7 +22,7 @@ mount  /dev/big_volume_group/squid-cache
 chown proxy:proxy /squid-cache
 squid3 -z
 ```
-
+# `squid -k parse`
 # Comment vérifier que squid fontionne:
 ```
 netstat -tulpn | grep :3128
