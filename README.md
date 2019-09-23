@@ -25,15 +25,18 @@ squid3 -z
 # `squid -k parse`
 # Comment vérifier que squid fontionne:
 ```
-netstat -tulpn | grep :3128
+netstat -lpn | grep :3128
 tail -f /var/log/squid/access.log
 tail -f /var/log/squid/cache.log
 ```
-
+sudo systemctl status squid
 # pour avoir des informations complémentaires sur squidguard
 **squidGuard -d -b -P -C all**  
 Cette commande prend pas mal de temps si l'on met en place un squidGuad.conf.
 Il est important de la lancer apres avoir mis en place le squidGuard.conf car seuls les destinations définies dans ce fichiers seront compilés. Et c'est cela qui prend du temps. Et à chaque fois que l'on lance cette commande cela recommence.
+
+Cette commande va créer de nouveaux fichiers .db qui seront à root. Ce qui pose un probleme : 'sudo chown -R /var/lib/squiguard/db`
+Il faudrait essayer `sudo squidGuard -u proxy -d -b -P -C all`
 
 # pour tester si squidGuard fonctionne - Dry Run
 **echo "http://www.popcat.com 192.168.1.121/ - - GET" | squidGuard -c /etc/squidguard/squidGuard.conf -d**  
