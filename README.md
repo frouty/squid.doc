@@ -31,6 +31,8 @@ tail -f /var/log/squid/cache.log
 ```
 `sudo systemctl status squid`
 # Squidguard 
+## path pour la base de donnée
+`/var/lib/squidguard/blacklists/`
 ## la base de donnée de Toulouse université
 ```
 mkdir /root/squidguard
@@ -40,7 +42,10 @@ tar xzvf blacklists.tar.gz
 mv blacklists/* /var/lib/squidguard/db/
 chown -R  proxy:proxy /var/lib/squidguard/db/
 ```
-
+## pour les autres blacklists
+http://www.squidguard.org/blacklists.html
+## pour des scripts de mise à jour des databases
+http://www.shallalist.de/helpers.html
 ## pour avoir des informations complémentaires sur squidguard
 **squidGuard -d -b -P -C all**  
 Cette commande prend pas mal de temps si l'on met en place un squidGuad.conf.
