@@ -29,8 +29,19 @@ netstat -lpn | grep :3128
 tail -f /var/log/squid/access.log
 tail -f /var/log/squid/cache.log
 ```
-sudo systemctl status squid
-# pour avoir des informations complémentaires sur squidguard
+`sudo systemctl status squid`
+# Squidguard 
+## la base de donnée de Toulouse université
+```
+mkdir /root/squidguard
+cd /root/squidguard
+wget ftp://ftp.univ-tlse1.fr/blacklist/blacklists.tar.gz
+tar xzvf blacklists.tar.gz
+mv blacklists/* /var/lib/squidguard/db/
+chown -R  proxy:proxy /var/lib/squidguard/db/
+```
+
+## pour avoir des informations complémentaires sur squidguard
 **squidGuard -d -b -P -C all**  
 Cette commande prend pas mal de temps si l'on met en place un squidGuad.conf.
 Il est important de la lancer apres avoir mis en place le squidGuard.conf car seuls les destinations définies dans ce fichiers seront compilés. Et c'est cela qui prend du temps. Et à chaque fois que l'on lance cette commande cela recommence.
