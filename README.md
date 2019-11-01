@@ -46,6 +46,10 @@ chown -R  proxy:proxy /var/lib/squidguard/db/
 http://www.squidguard.org/blacklists.html
 ## pour des scripts de mise à jour des databases
 http://www.shallalist.de/helpers.html
+
+## apres chaque modification de /var/lib/squidguard/db
+faire `squidGuard -C` cela prend du temps
+puis `squid -k reconfigure`
 ## pour avoir des informations complémentaires sur squidguard
 **squidGuard -d -b -P -C all**  
 Cette commande prend pas mal de temps si l'on met en place un squidGuad.conf.
