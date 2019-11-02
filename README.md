@@ -49,6 +49,7 @@ http://www.shallalist.de/helpers.html
 
 ## apres chaque modification de /var/lib/squidguard/db
 faire `squidGuard -C` cela prend du temps
+ou `sudo update-squidguard`
 puis `squid -k reconfigure`
 ## pour avoir des informations complémentaires sur squidguard
 **squidGuard -d -b -P -C all**  
