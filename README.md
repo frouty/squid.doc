@@ -3,7 +3,7 @@ Version de squid : **squid3 -v**
 
 Connaitre son adresse IP: http://www.ipaddresslocation.org/
 
-Enlever tous les commentaires d'un fichier de conf:
+#Enlever tous les commentaires d'un fichier de conf:
 **grep -v '^#' /etc/squid3/squid.conf |uniq**. Le probleme c'est que cela converse les lignes vides cela donne un fichier avec pleins de ligles blan
 
 #Creation du volume logique pour le cache.
@@ -35,3 +35,5 @@ Le premier - est un user si on l'a mis en place dans le squidGuard.conf.
 
 #reste à faire 
 l'identification par user dans squid comme cela je pourrais l'utiliser dans squidguard.
+
+#Ou est ce que l'on définie la page de redirection. 
