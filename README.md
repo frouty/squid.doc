@@ -74,3 +74,9 @@ Le premier - est un user si on l'a mis en place dans le squidGuard.conf.
 
 ## Génération de la base de données
 squidGuard -C all
+
+## Mise a jour de la blacklist
+> rsync -arpogvt rsync://ftp.ut-capitole.fr/blacklist .
+On recupere la blacklist sous dest.
+voir le script dans la squid box /root/update_blaclist.sh
+Verifier qu'il marche et le mettre en cron weekly.
