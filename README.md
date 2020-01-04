@@ -37,3 +37,7 @@ Le premier - est un user si on l'a mis en place dans le squidGuard.conf.
 l'identification par user dans squid comme cela je pourrais l'utiliser dans squidguard.
 
 #Ou est ce que l'on définie la page de redirection. 
+
+# Comment ajouter une url a la blacklist
+## Génération de la base de données
+squidGuard -C all
