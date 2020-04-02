@@ -45,7 +45,7 @@ Je ne fais pas cela dans les fichiers de squidguard mais dans squid.
 ## Comment ajouter une url à cette blacklist
 ```bash
 su 
-touch "url" >> /etc/squid/my_blocked_domains.txt
+echo "url" >> /etc/squid/my_blocked_domains.txt
 systemctl reload squid
 ```
 
