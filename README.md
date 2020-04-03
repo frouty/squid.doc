@@ -48,6 +48,7 @@ su
 echo "url" >> /etc/squid/my_blocked_domains.txt
 systemctl reload squid
 ```
+url = .1001jeux.fr par exemple. Le . au début est important.
 
 ## Comment bloquer youtube
 ```
