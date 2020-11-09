@@ -62,7 +62,7 @@ http_access deny ban_youtube
 ```
 - 3 service squid restart 
 
-### Débloquer 
+### Débloquer
 `mv ban_youtube.conf ban_youtube.donf.desable`
 
 - 4 use the ban_youtube.sh script : sudo ./ban_youtube.sh 
