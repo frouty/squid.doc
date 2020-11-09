@@ -61,8 +61,9 @@ acl ban_youtube dstdomain "/etc/squid/ban_youtube.txt"
 http_access deny ban_youtube
 ```
 - 3 service squid restart 
+
 ### Débloquer 
-mv ban_youtube.conf ban_youtube.donf.desable
+`mv ban_youtube.conf ban_youtube.donf.desable`
 
 - 4 use the ban_youtube.sh script : sudo ./ban_youtube.sh 
 
