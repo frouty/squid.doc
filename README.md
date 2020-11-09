@@ -29,6 +29,9 @@ tail -f /var/log/squid/cache.log
 # Comment relancer squid 
 `systemctl reload squid`  
 `systemctl restart squid` est assez long à se terminer.
+-̀ `service squid reload`
+-̀ `service squid restart`
+
 
 # reste à faire 
 l'identification par user dans squid comme cela je pourrais l'utiliser dans squidguard.
@@ -50,12 +53,19 @@ systemctl reload squid
 ```
 url = .1001jeux.fr par exemple. Le . au début est important.
 
-## Comment bloquer youtube
+## Comment bloquer/debloquer youtube
+- 1 Créer un fichier ban_youtube.txt avec .youtube.com
+- 2 Créer un fichier dans /etc/squid/conf.d avec :
 ```
-su 
-mv /etc/squid/conf.d/vids.conf /etc/squid/conf.d/vids.conf.desable
-systemctl reload squid
+acl ban_youtube dstdomain "/etc/squid/ban_youtube.txt"
+http_access deny ban_youtube
 ```
+- 3 service squid restart 
+### Débloquer 
+mv ban_youtube.conf ban_youtube.donf.desable
+
+- 4 use the ban_youtube.sh script : sudo ./ban_youtube.sh 
+
 # Comment créer la page qui s'affiche quand un site est bloqué=la page de redirection.
 ## les pages d'erreur sont sous:
 /usr/share/squid/errors 
